@@ -1,0 +1,43 @@
+//Centers spinner container
+.spinner-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+//Spinner parent container
+.spinner {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+//Background of spinner
+.spinner .bg {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 8px solid $lightGrey;
+    border-radius: 50%;
+    opacity: .5;
+}
+//Bar that spins around
+.spinner .bar {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 8px solid transparent;
+    border-top-color: $emeraldGreen;
+    border-radius: 50%;
+    animation: spinner 1s ease-out infinite;
+}
+//Spinning animation
+@keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

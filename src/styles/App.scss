@@ -1,0 +1,9 @@
+//Main CSS File, imports all seperate scss files for readability
+
+//Colour Palette import
+@import './colors';
+
+//Routes imports
+@import '../Routes/EditPost/editPost';
+//Component imports
+@import '../components/Loader/loader';

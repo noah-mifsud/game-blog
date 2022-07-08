@@ -1,0 +1,109 @@
+.edit-post-page {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Libre Franklin', sans-serif;
+}
+//Main styling for container and text
+.edit-tools {
+    flex: 3;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    border-right: 1px solid $lightGrey;
+    padding: 5px;
+    color: $grey;
+    overflow-y: scroll;
+    & h2 {
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+    & label {
+        margin-left: .5em;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    & p {
+        font-size: .8rem;
+        font-weight: 100;
+        font-style: italic;
+    }
+}
+//Styles all inputs
+.edit-tools input {
+    padding: .3em;
+    border: none;
+    border-bottom: 1px solid $lightGrey;
+    width: 90%;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 200;
+    font-size: .8rem;
+    margin-bottom: 1em;
+    margin-left: .8em;
+    &:focus {
+        outline: none;
+        border-bottom: 2px solid $emeraldGreen;
+    }
+    &::placeholder {
+        font-style: italic;
+    }
+}
+.edit-tools button {
+    padding: 1em 2em;
+    background-color: transparent;
+    color: $grey;
+    border: 1px solid $lightGrey;
+    border-radius: .3em;
+    &:hover {
+        box-shadow: 0 0 .5em 1px $lightGrey;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    &:active {
+        background-color: $lightGrey;
+    }
+}
+.edit-tools .media-upload-btns {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.post-display {
+    width: 100%;
+    flex: 7;
+    flex-shrink: 0;
+    padding: 1em;
+    & h1 {
+        margin: 0;
+        font-weight: 900;
+        font-size: 2rem;
+        color: $grey;
+        border-bottom: 1px solid $lightGrey;
+        padding-bottom: .5em;
+    }
+    & h2 {
+        margin: .2em;
+        font-size: 1.2rem;
+        color: $grey;
+    }
+}
+.post-display .tags {
+    display: flex;
+    gap: 1em;
+    & p {
+        color: $grey;
+        font-size: .8rem;
+        border-radius: 1em;
+        border: 1px solid $emeraldGreen;
+        padding: .2em 1em;
+    }
+}
+.add-tag-btn {
+    width: 100%;
+}
+.hidden {
+    display: none;
+}
+.visible {
+    display: inline;
+}
