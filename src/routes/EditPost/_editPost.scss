@@ -90,6 +90,8 @@
 .post-display .tags {
     display: flex;
     gap: 1em;
+    width: 100%;
+    overflow-x: scroll;
     & p {
         color: $grey;
         font-size: .8rem;
@@ -100,6 +102,25 @@
 }
 .add-tag-btn {
     width: 100%;
+}
+.tag-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    & input {
+        margin-top: .3em;
+        width: 70%;
+    }
+    & button {
+        padding: .2em;
+        width: 10%;
+    }
+}
+.tag-div {
+    display: flex;
+    align-items: center;
+    gap: 1em;
 }
 .hidden {
     display: none;
