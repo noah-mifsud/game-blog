@@ -21,7 +21,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 8px solid $lightGrey;
+    border: 8px solid $black;
     border-radius: 50%;
     opacity: .5;
 }
@@ -32,7 +32,7 @@
     width: 100%;
     height: 100%;
     border: 8px solid transparent;
-    border-top-color: $emeraldGreen;
+    border-top-color: $mustard;
     border-radius: 50%;
     animation: spinner 1s ease-out infinite;
 }
