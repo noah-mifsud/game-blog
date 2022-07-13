@@ -13,6 +13,7 @@ function EditPost() {
     const [taglineText, setTaglineText] = useState('Insert tagline');
     const [taglineToggle, setTaglineToggle] = useState(false);
     const [tagList, setTagList] = useState(['Action']);
+    const [topicList, setTopicList] = useState(['Enter text here...']);
 
     //Updates useState when called
     const updateText = (e:any, setState:any) => {
@@ -47,20 +48,36 @@ function EditPost() {
                 <button onClick={() => toggleElement(setTaglineToggle, taglineToggle)}>ADD TAGLINE</button> : <button className='remove-btn' onClick={() => toggleElement(setTaglineToggle, taglineToggle)}>REMOVE TAGLINE</button>
             }
             {tagList.map((item, index) => {
-                    if (item !== '') {
-                        return <div className='tags-edit'>
+                if (item !== '') {
+                    return <div key={index} className='tags-edit'>
                             <p dangerouslySetInnerHTML={{__html: item}}></p>
                             <HiX className='delete-icon' onClick={() => removeFromList(setTagList, tagList, tagList.indexOf(item))}/>
                         </div>
                     } else {
                         return <div></div>
                     }
-            })
+                })
             }
             {tagList.length < 3 &&
                 <button onClick={() => addToList(setTagList, tagList, 'Action')}>ADD TAG</button>
             }
             <p className='note'>Note: Max of 3 tags per post.</p>
+            <h2>Article -</h2>
+            {topicList.map((item, index) => {
+                if (item !== '') {
+                    return <div key={index} className='tags-edit'>
+                            <p dangerouslySetInnerHTML={{__html: item}}></p>
+                            <HiX className='delete-icon' onClick={() => removeFromList(setTopicList, topicList, topicList.indexOf(item))}/>
+                        </div>
+                    } else {
+                        return <div></div>
+                    }
+                })
+            }
+            {topicList.length < 3 &&
+                <button onClick={() => addToList(setTopicList, topicList, 'Enter text here...')}>ADD TOPIC</button>
+            }
+            <p className='note'>Note: Max of 3 topics per post.</p>
         </aside>
         {/* Post Document */}
         <article className='edit-doc'>
@@ -72,6 +89,16 @@ function EditPost() {
                 {tagList.map((item, index) => {
                     if (item !== '') {
                         return <ContentEditable key={index} className='tag' onChange={(e) => editList(e, setTagList, tagList, index)} html={tagList[tagList.indexOf(item)]}/>
+                    } else {
+                        return <div></div>
+                    }
+                })
+                }
+            </div>
+            <div className='topic-container'>
+                {topicList.map((item, index) => {
+                    if (item !== '') {
+                        return <ContentEditable key={index} className='topic' onChange={(e) => editList(e, setTopicList, topicList, index)} html={topicList[topicList.indexOf(item)]}/>
                     } else {
                         return <div></div>
                     }
