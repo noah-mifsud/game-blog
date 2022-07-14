@@ -64,6 +64,7 @@ main {
     color: $black;
     border-bottom: 1px solid $black;
     margin-bottom: .5rem;
+    word-wrap: break-word;
     &:focus {
         outline: 2px dotted $black;
     }
@@ -91,6 +92,13 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    & p {
+        white-space: nowrap;
+        height: 1em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 90%;
+    }
 }
 .delete-icon {
     border: 1px solid $red;
@@ -114,4 +122,5 @@ main {
     font-size: 1rem;
     margin: 1.5em 0em;
     font-weight: 200;
+    word-wrap: break-word;
 }
